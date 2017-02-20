@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  header: MyString
+  navbar: MyString
+  footer: MyString
+
+two:
+  header: MyString
+  navbar: MyString
+  footer: MyString

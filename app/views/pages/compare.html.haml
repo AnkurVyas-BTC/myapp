@@ -1,0 +1,11 @@
+.container
+  .row
+    = form_tag pages_compare_sections_path, remote: true do
+      .col-md-6.pad-a10
+        = text_area_tag 'left_section',@sample_text, class: 'form-control', size: '50x25'
+      .col-md-6.pad-a10
+        = text_area_tag 'right_section', @sample_text, class: 'form-control', size: '50x25'
+      .col-md-12.text-center.pad-t10
+        = submit_tag 'Compare HTML', class: 'btn btn-large btn-success compare-btn'
+    .result.text-success
+      Both html are same!

@@ -1,0 +1,47 @@
+.container
+  .row
+    .col-md-12
+      %h1 Pages contents
+    .col-md-12
+      = form_tag pages_update_path do
+        .form-group.clearfix
+          -#%h3 Header
+          .col-md-2
+            %label Header
+          .col-md-10
+            = "<header>"
+            .pad-l20
+              = "<title>"
+              .pad-l20
+                =  text_area_tag 'page[header]', @page.header, class: 'form-control'
+              = "</title>"
+            = "</header>"
+        .form-group.clearfix
+          -#%h3 NavBar
+          .col-md-2
+            %label Navbar
+          .col-md-10
+            = "<navbar>"
+            .pad-l20
+              = "<ul>"
+              - navbar = @page.navbar.split(',')
+              - 3.times do |index|
+                .pad-l20
+                  = "<li>"
+                  =  text_area_tag 'page[navbar][]', @page.navbar[index], class: 'form-control'
+                  = "<li>"
+              = "</ul>"
+            = "</navbar>"
+        .form-group.clearfix
+          -#%h3 Footer
+          .col-md-2
+            %label Footer
+          .col-md-10
+            = "<footer>"
+            .pad-l20
+              =  text_area_tag 'page[footer]', @page.footer, class: 'form-control'
+            = "</footer>"
+        .form-group.clearfix
+          .col-md-2
+          .col-md-1
+            = submit_tag 'Save', class: 'btn btn-large btn-success'

@@ -1,0 +1,33 @@
+.container
+  .row
+    .col-md-12.edit-btn
+      = link_to 'Edit This Page', pages_admin_path, class: 'btn btn-large btn-success'
+  .row
+    .form-group.clearfix
+      = "<header>"
+      .pad-l20
+        = "<title>"
+        .pad-l20
+          = @page.header
+        = "</title>"
+      = "</header>"
+    .form-group.clearfix
+      = "<navbar>"
+      .pad-l20
+        = "<ul>"
+        - @page.navbar.split(',').each do |page_navbar|
+          .pad-l20
+            = "<li>"
+            =  page_navbar
+            = "<li>"
+        = "</ul>"
+      = "</navbar>"
+    .form-group.clearfix
+      = "<footer>"
+      .pad-l20
+        =  @page.footer
+      = "</footer>"
+  .row
+    .col-md-12
+      = "#{@page.header}#{@page.navbar}#{@page.footer}".html_safe
+
