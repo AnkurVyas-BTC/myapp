@@ -57,6 +57,7 @@ class PagesController < ApplicationController
   def calculate_diff(distance)
     return 0 if params[:left_section].length == 0 && params[:right_section].length == 0
     return 100 if params[:left_section].length == 0 && params[:right_section].length > 0
-    distance / params[:left_section].length * 100
+    string_length =  [params[:left_section].length, params[:right_section].length].max 
+    distance / string_length * 100
   end
 end
